@@ -6,7 +6,7 @@ import Login from "./components/login";
 import SignUp from "./components/signup";
 import { AuthProvider } from "./firebase/auth";
 import PrivateRoute from "./privateRoute";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const App = () => {
   return (
@@ -14,8 +14,8 @@ const App = () => {
       <Router>
         <div>
           <PrivateRoute exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/login" component={Login}  />
+          <Route exact path="/login" component={SignUp} />          
         </div>
       </Router>
     </AuthProvider>

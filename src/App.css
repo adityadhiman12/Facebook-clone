@@ -23,8 +23,9 @@
 .login-header {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  max-width: 80%;
+  max-width: 61%;
   margin: auto;
+  padding: 10px;
 }
 .user-input-login {
   display: grid;
@@ -56,4 +57,17 @@ label {
 header{
 
   background-color: #385898;
+}
+
+.container{
+  margin-top: 50px;
+  clear: both;
+}
+.row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.signup-facebook-help{
+  width: 60%
 }
