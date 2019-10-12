@@ -35,7 +35,7 @@ const SignUp = ({ history }) => {
             <form onSubmit={handleSignUp} autoComplete="off">
               
               <div className="form-group">
-                <label className="control-label">
+                <label className="control-label text-dark">
                   Email Address
                   <input
                   name="email"
@@ -47,7 +47,7 @@ const SignUp = ({ history }) => {
               </div>
 
               <div className="form-group">
-                <label className="control-label">
+                <label className="control-label text-dark">
                   Password
                   <input
                     type="password"
