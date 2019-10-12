@@ -6,12 +6,15 @@ import ShowPost from "./ShowPost";
 export class User extends Component {
   state = {
     text: "",
-    click: "no"
+    click: "no",
+    posts:[]
   };
 
   handleClick = (event) => {
     this.setState({ click: "yes" });
-    this.setState({ text: this.state.text });
+    this.state.posts.push({text:this.state.text});
+    this.setState({text:""});
+
     event.preventDefault();
   };
 
@@ -32,7 +35,7 @@ export class User extends Component {
           <Posts handleChange={this.handleChange} 
           handleClick={this.handleClick} />
 
-          {this.state.click === "yes" && (<ShowPost text={this.state.text}/>)}
+          {this.state.click === "yes" && (<ShowPost posts={this.state.posts}/>)}
         </div>
       </div>
     );
