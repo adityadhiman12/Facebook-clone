@@ -18,6 +18,7 @@ const Login = ({ history }) => {
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
         history.push("/");
+        
       } catch (error) {
         alert(error);
       }
