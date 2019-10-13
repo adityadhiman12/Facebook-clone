@@ -17,7 +17,7 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+        history.push("/user");
         
       } catch (error) {
         alert(error);
@@ -30,7 +30,7 @@ const Login = ({ history }) => {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/" />;
+    return <Redirect to="/user" />;
   }
 
   return (
@@ -38,15 +38,15 @@ const Login = ({ history }) => {
       <div className="login-header">
         <div className="facebook-logo"></div>
 
-        <form autocomplete="off" onSubmit={handleLogin}>
+        <form autoComplete="off" onSubmit={handleLogin}>
           <div className="user-input-login">
             <label>
               Email or phone
-              <input name="email" type="email" class="form-control" placeholder="Email" />
+              <input name="email" type="email" className="form-control" placeholder="Email" />
             </label>
             <label>
               Password
-              <input name="password" type="password" class="form-control" placeholder="Password" />
+              <input name="password" type="password" className="form-control" placeholder="Password" />
             </label>
             <button type="submit" className="login-button">Log in</button>
           </div>

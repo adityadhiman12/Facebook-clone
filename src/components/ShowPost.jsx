@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
 export class ShowPost extends Component {
   render() {
     return (
@@ -15,12 +14,10 @@ export class ShowPost extends Component {
               </Typography>
             </CardContent>
           </Card>
-        ))}
-
+        ))}{" "}
         <br />
       </div>
     );
   }
 }
-
 export default ShowPost;

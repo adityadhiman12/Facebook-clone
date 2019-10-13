@@ -10,6 +10,7 @@ export class Posts extends Component {
           type="text"
           placeholder="Write something here..."
           value={this.props.text}
+          required
         />
 
         <Button
