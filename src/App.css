@@ -59,7 +59,7 @@ header {
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: auto;
   clear: both;
 }
 .row {
@@ -70,49 +70,58 @@ header {
 .signup-facebook-help {
   width: 60%;
 }
-
+.searchl {
+  display: flex;
+}
+.navleft {
+  display: flex;
+}
 /*---------------------------------*/
-.homepage-header {
-  background-color: #4267b2;
-  height: 42px;
-
-  width: 100%;
-  height:auto;
-}
-
-.homepage-navbar {
+.navbar {
   display: flex;
-  /* background-color: #282c34;; */
-  justify-content:center;
-  
-  width: 60%;
-  margin: auto;
-  padding: 0 8px;
-  height: 42px;
-  color: #fff;
+  background-color:#4267b2;
+  height: 45px;
+  flex-grow: 1;
+  justify-content: flex-start;
 }
 
-.homepage-navbar h1{
-  /* align-self: center; */
-  font-weight: bold;
+.navtxt{
+  color:white;
 }
 
-.posts{
-  width:60%;
-  margin:auto;
-  height: 100%;
-  margin-top: 2%;
+.container{
+  margin-left: 350px;
 }
 
-input{
-  width: 100%;
-  height:120px;  
-  padding:5px;
-  border-radius: 3%;
+.srch-icon {
+  transform: translate(206px,-30px);
+}
+.fb-icon {
+  transform:translate(1px,-11px);
+}
+.navbar i {
+  padding: 10px;
+}
+
+.navright {
+  margin-left: auto;
   display: flex;
-  justify-content: space-between;
-  margin-left:50px;
-
+  /* padding-top: 30px; */
+  padding-bottom: 6px;
+}
+.color {
+  color: white;
+  display: flex;
+  position: relative;
+  top: -5px;
 }
 
+.navtxt {
+  padding: 10px;
+}
+
+.right-navbar-icon i{
+  color:#212529;
+}
+/*-----------------------------------------*/
 

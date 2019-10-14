@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "../App.css";
-import Posts from "./Posts";
+import Posts from "../components/posts/Posts";
 import ShowPost from "./ShowPost";
 import Navbar from "./Navbar";
 import app from "../firebase/firebase";
-import postDb from "../db/postDb"
-
+import postDb from "../db/postDb";
 
 export class User extends Component {
   state = {
@@ -14,8 +13,10 @@ export class User extends Component {
     posts: []
   };
   handleClick = event => {
-    this.setState({ click: "yes" });
-    this.state.posts.push({ text: this.state.text });
+    if (this.state.text.length !== 0) {
+      this.setState({ click: "yes" });
+     this.state.posts.push({ text: this.state.text });
+    }
     this.setState({ text: "" });
     event.preventDefault();
   };
@@ -25,13 +26,9 @@ export class User extends Component {
   render() {
     postDb.fetchAllPosts();
     return (
-      
       <div className="homepage-container">
-        <div className="homepage-header">
-          <div className="homepage-navbar">
-            <Navbar/>
-          </div>
-        </div>
+        <Navbar />
+
         <div className="posts">
           <Posts
             handleChange={this.handleChange}
