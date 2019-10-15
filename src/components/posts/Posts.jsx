@@ -1,10 +1,23 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import "./css/posts.css";
+// import Card from '@material-ui/core/Card';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import Typography from '@material-ui/core/Typography';
+
+
 
 export class Posts extends Component {
   render() {
+    // console.log(this.props)
+    
+    // const {classes, post: {userImage, userHandle, body, createdAt}} = this.props;
+    
+
+
     return (
+      <div>
       <div>
         <input
           onChange={this.props.handleChange}
@@ -49,6 +62,18 @@ export class Posts extends Component {
             </ul>
           {/* </div> */}
         </div>
+      </div>
+      {/* <div>
+        <Card>
+          <CardMedia/>
+          <CardContent>
+            <Typography variant="h5">{userHandle}</Typography>
+            <Typography variant="body1">{body}</Typography>
+            <Typography variant="body2" color="textSecondary">{createdAt}</Typography>
+          </CardContent>
+
+        </Card>
+      </div> */}
       </div>
     );
   }
