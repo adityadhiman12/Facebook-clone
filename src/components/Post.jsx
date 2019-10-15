@@ -5,7 +5,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
-import { borderRadius } from "@material-ui/system";
+import dayjs from "dayjs"
+import relativeTime from 'dayjs/plugin/relativeTime'
+
 
 const styles = {
   card: {
@@ -27,6 +29,7 @@ const styles = {
 class Post extends Component {
   state = {};
   render() {
+    dayjs.extend(relativeTime)
     const {
       classes,
       post: {
@@ -58,7 +61,7 @@ class Post extends Component {
             {userHandle}
           </Typography>
           <Typography variant="body2" color="textSecondary">
-            {createdAt}
+            {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
         </CardContent>
