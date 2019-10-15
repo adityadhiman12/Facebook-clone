@@ -1,20 +1,53 @@
 import React, { Component } from "react";
 
 export class DetailAbout extends Component {
+
+  componentDidMount(){
+    document.querySelector("#defaultOpen").click();
+  }
+
+  openTab=(event,tabName)=>{
+    let i,tabContent,tabLink;
+    tabContent=document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+
+    tabLink = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabLink.length; i++) {
+      tabLink[i].className = tabLink[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.className += " active";
+
+  }
+
   render() {
     return (
       <div>
         <div>
           <div class="tab">
-            <button class="tablinks" id="defaultOpen">
+            <button class="tablinks"
+            onClick={event=>this.openTab(event, 'overview')}
+            id="defaultOpen">
               Overview
             </button>
-            <button class="tablinks">Work and Education</button>
-            <button class="tablinks">Places You've Visited</button>
-            <button class="tablinks">Contact and Basic Details</button>
-            <button class="tablinks">Family and Relationships</button>
-            <button class="tablinks">Details About You</button>
-            <button class="tablinks">Life Events</button>
+            <button class="tablinks" onClick={event=>this.openTab(event, 'WorkandEducation')}>Work and Education</button>
+            <button class="tablinks"
+            onClick={event=>this.openTab(event, 'PlacesYouhaveVisited')}>Places You've Visited</button>
+            <button class="tablinks"
+            onClick={event=>this.openTab(event, 'ContactandBasicDetails')}
+            >Contact and Basic Details</button>
+            <button class="tablinks"
+            onClick={event=>this.openTab(event, 'FamilyandRelationships')}
+            >Family and Relationships</button>
+            <button class="tablinks"
+            onClick={event=>this.openTab(event, 'DetailsAboutYou')}
+            >Details About You</button>
+            <button class="tablinks"
+            onClick={event=>this.openTab(event, 'LifeEvents')}
+            >Life Events</button>
           </div>
 
           <div id="overview" class="tabcontent overview">
@@ -27,7 +60,7 @@ export class DetailAbout extends Component {
               <p>Gender</p>
               <h5>male</h5>
               <p>Interested in</p>
-              <h5>Womem</h5>
+              <h5>Women</h5>
               <p>Language</p>
               <h5>Hindi English Language</h5>
               <p>Religion</p>
@@ -111,10 +144,7 @@ export class DetailAbout extends Component {
           <div id="DetailsAboutYou" class="tabcontent DetailsAboutYou">
             <p className="nameline2">ABOUT YOU</p>
             <p>
-              I'm selfish, impatient, and a little insecure. I make mistakes,
-              I'm out of control, and at times hard to handle. But if you can't
-              handle me at my worst, then you sure as hell don't deserve me at
-              my best.
+                Just a common person,working hard silently.
             </p>
             <p className="nameline2">OTHER NAMES</p>
             <div className="aline1">
@@ -122,10 +152,7 @@ export class DetailAbout extends Component {
             </div>
             <p className="nameline2">FAVORITE QUOTES</p>
             <p>
-              Love is friendship that has caught fire. It is quiet
-              understanding, mutual confidence, sharing and forgiving. It is
-              loyalty through good and bad times. It settles for less than
-              perfection and makes allowances for human weaknesses.
+                Keep your dream alive,even if you are going with a slow place,just keep it alive.
             </p>
           </div>
 
@@ -134,7 +161,7 @@ export class DetailAbout extends Component {
             <div className="aline1">
               <a href=" ">+ Add a life event</a>
             </div>
-            <p>2015 Started School at Karnal The City Beautifull</p>
+            <p>2016 Started College at Chitkara University,Punjab</p>
           </div>
         </div>
       </div>

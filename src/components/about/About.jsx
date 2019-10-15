@@ -14,9 +14,9 @@ export class About extends Component {
                         <DetailAbout/>
                 </div>
             </div>
-            <div className="setimagediv">
+            {/* <div className="setimagediv">
                 {/* <Image/>` */}
-            </div>
+            {/* </div> */} */}
             </div>
 
         )
