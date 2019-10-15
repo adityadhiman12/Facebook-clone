@@ -36,7 +36,7 @@ export class Posts extends Component {
                   <div className="space buttonwrapper1">
                     <button className="add-img">
                       <i
-                        class="fas fa-photo-video fa-lg"
+                        className="fas fa-photo-video fa-lg"
                         style={{ color: "blue" }}
                       ></i>{" "}
                       Photo{" "}
@@ -60,20 +60,8 @@ export class Posts extends Component {
                 </div>
               </li>
             </ul>
-          {/* </div> */}
         </div>
       </div>
-      {/* <div>
-        <Card>
-          <CardMedia/>
-          <CardContent>
-            <Typography variant="h5">{userHandle}</Typography>
-            <Typography variant="body1">{body}</Typography>
-            <Typography variant="body2" color="textSecondary">{createdAt}</Typography>
-          </CardContent>
-
-        </Card>
-      </div> */}
       </div>
     );
   }

@@ -54,7 +54,7 @@ export class User extends Component {
     const {classes} = this.props;
     // console.log(this.state.posts)
     let recentPostsdata = this.state.postings ? (
-      this.state.postings.map(post => <Post post={post}/>)) : (<p>loading....</p>)
+      this.state.postings.map(post => <Post key={post.postId}post={post}/>)) : (<p>loading....</p>)
 
     
     return (

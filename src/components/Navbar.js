@@ -6,11 +6,11 @@ export class Navbar extends Component {
   render() {
     return (
       <div className="navbar" sticky="top">
-        <div class="container">
+        <div className="container">
           <div className="navleft">
             <Link to="/">
               <div>
-                <i class="fab fa-facebook-square fa-2x fb-icon"></i>
+                <i className="fab fa-facebook-square fa-2x fb-icon"></i>
               </div>
             </Link>
             <div className="inputText">
@@ -20,7 +20,7 @@ export class Navbar extends Component {
                 type="text"
                 placeholder="search"
               />
-              <i class="fas fa-search srch-icon"></i>
+              <i className="fas fa-search srch-icon"></i>
             </div>
           </div>
           <div className="navright">
@@ -41,12 +41,12 @@ export class Navbar extends Component {
               </Link>
               <p className="navtxt">|</p>
 
-              <div class="dropdown">
+              <div className="dropdown">
                 <i
                   // onClick={this.myFunction}
                   className="fas fa-user-friends fa-lg"
                 ></i>
-                <div id="myDropdown" class="dropdown-content">
+                <div id="myDropdown" className="dropdown-content">
                   {/* <Friends friendRequest={friendRequest} /> */}
                 </div>
               </div>
