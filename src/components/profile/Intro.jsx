@@ -52,8 +52,11 @@ export class intro extends Component {
             </li>
           </ul>
         </div>
-
+      <div>
         {/* <SmallImagePanel/> */}
+      </div>
+        
+        {/* About smallintro Modal */}
 
         <div id="myModal" class="modal fade" role="dialog">
           <div class="modal-dialog modal-dialog-centered">
@@ -164,6 +167,7 @@ export class intro extends Component {
           </div>
         </div>
       </div>
+
     );
   }
 }

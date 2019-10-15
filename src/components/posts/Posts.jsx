@@ -17,36 +17,36 @@ export class Posts extends Component {
 
         <div className="card-footer">
           {/* <div className="createfooter1"> */}
-            <ul className="post-footer">
-              <li className="li">
-                <div className="fk">
-                  <div className="space buttonwrapper1">
-                    <button className="add-img">
-                      <i
-                        class="fas fa-photo-video fa-lg"
-                        style={{ color: "blue" }}
-                      ></i>{" "}
-                      Photo{" "}
-                    </button>
-                    <input
-                      name="img"
-                      type="file"
-                      defaultValue=""
-                      // onChange
-                    />
-                  </div>
-
-                  <Button
-                    variant="contained"
-                    onClick={this.props.handleClick}
-                    color="primary"
-                    className="postButton"
-                  >
-                    Post
-                  </Button>
+          <ul className="post-footer">
+            <li className="li">
+              <div className="fk">
+                <div className="space buttonwrapper1">
+                  <button className="add-img">
+                    <i
+                      class="fas fa-photo-video fa-lg"
+                      style={{ color: "blue" }}
+                    ></i>{" "}
+                    Photo{" "}
+                  </button>
+                  <input
+                    name="img"
+                    type="file"
+                    defaultValue=""
+                    // onChange
+                  />
                 </div>
-              </li>
-            </ul>
+
+                <Button
+                  variant="contained"
+                  onClick={this.props.handleClick}
+                  color="primary"
+                  className="postButton"
+                >
+                  Post
+                </Button>
+              </div>
+            </li>
+          </ul>
           {/* </div> */}
         </div>
       </div>

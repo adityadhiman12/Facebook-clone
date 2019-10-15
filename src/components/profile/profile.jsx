@@ -6,6 +6,8 @@ import "./css/profilepage.css";
 import coverphoto from "./img/Joker-Trailer-1-61.jpg";
 import profilepic from "./img/joker-2019-14-cover.jpg";
 import Navbar from "../Navbar";
+import About from "../about/About";
+
 
 export class Profile extends Component {
   render() {
@@ -74,7 +76,7 @@ export class Profile extends Component {
                 <Tab>
                   <div className="box4">Photos</div>
                 </Tab>
-                <Tab>
+                {/* <Tab>
                   <select className="select1">
                     <option selected className="option1">
                       More
@@ -89,7 +91,7 @@ export class Profile extends Component {
                       Pages
                     </option>
                   </select>
-                </Tab>
+                </Tab> */}
               </TabList>
                 <div className="container7">
                   <div className="Introduction"><Introduction/> </div>
@@ -97,7 +99,9 @@ export class Profile extends Component {
                 </div>
             {/* </div> */}
           </div>
+                
 
+                {/* Cover Pic Modal */}
           <div id="imageModal" className="modal fade " role="dialog">
             <div className="modal-dialog">
               <div className="modal-content">
@@ -112,7 +116,9 @@ export class Profile extends Component {
               </div>
             </div>
           </div>
-          <TabPanel>{/* <About/> */}</TabPanel>
+          <TabPanel></TabPanel>
+          
+          <TabPanel><About/></TabPanel>
           <TabPanel>{/* <FriendsProfile/> */}</TabPanel>
           <TabPanel>
             <div className="shiftphotos">{/* <ShowImages/> */}</div>
