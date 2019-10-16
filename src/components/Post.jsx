@@ -36,10 +36,7 @@ class Post extends Component {
         body,
         createdAt,
         userImage,
-        userHandle,
-        screamId,
-        likeCount,
-        commentCount
+        userHandle
       }
     } = this.props;
     return (

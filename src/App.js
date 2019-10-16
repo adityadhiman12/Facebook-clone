@@ -6,27 +6,39 @@ import SignUp from "./components/Signup";
 import userhome from "./components/User";
 import Home from "./components/Home";
 import Profile from "./components/profile/profile";
-import { AuthProvider } from "./firebase/auth";
-import PrivateRoute from "./privateRoute";
 import 'bootstrap/dist/css/bootstrap.css';
+import jwtDecode from "jwt-decode"
+import AuthRoute from "./utils/AuthRoute";
+
+let authenticated;
+const token = localStorage.FBIdToken;
+if(token){
+  const decodedToken = jwtDecode(token);
+  console.log(decodedToken);
+  if(decodedToken.exp*1000 < Date.now()){
+    window.location.href = '/login'
+    authenticated = false;
+  }
+  else{
+    authenticated = true;
+  }
+}
 
 const App = () => {
   return (
 
-    <AuthProvider>
       <Router>
         <div>
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login}  />
-          <Route exact path="/login" component={SignUp} /> 
-          <PrivateRoute exact path="/user"
+          <AuthRoute exact path="/login" component={Login} authenticated = {authenticated}  />
+          <AuthRoute exact path="/login" component={SignUp} authenticated = {authenticated} /> 
+          <Route exact path="/user"
           component={userhome}/>
-          <PrivateRoute exact path="/profile"
+          <Route exact path="/profile"
           component={Profile}/>
                    
         </div>
       </Router>
-    </AuthProvider>
   );
 };
 
