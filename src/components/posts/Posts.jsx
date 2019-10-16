@@ -6,30 +6,22 @@ import "./css/posts.css";
 // import CardMedia from '@material-ui/core/CardMedia';
 // import Typography from '@material-ui/core/Typography';
 
-
-
 export class Posts extends Component {
   render() {
-    // console.log(this.props)
-    
-    // const {classes, post: {userImage, userHandle, body, createdAt}} = this.props;
-    
-
-
     return (
       <div>
-      <div>
-        <input
-          onChange={this.props.handleChange}
-          className="postClass"
-          type="text"
-          placeholder="Write something here..."
-          value={this.props.text}
-          required
-        />
+        <div>
+          <input
+            onChange={this.props.handleChange}
+            className="postClass"
+            type="text"
+            placeholder="Write something here..."
+            value={this.props.text}
+            required
+          />
 
-        <div className="card-footer">
-          {/* <div className="createfooter1"> */}
+          <div className="card-footer">
+            {/* <div className="createfooter1"> */}
             <ul className="post-footer">
               <li className="li">
                 <div className="fk">
@@ -60,8 +52,8 @@ export class Posts extends Component {
                 </div>
               </li>
             </ul>
+          </div>
         </div>
-      </div>
       </div>
     );
   }

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import "../App.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 export class ShowPost extends Component {
   render() {
     return (
-      <div>
+      <div className="showPost">
         {this.props.posts.map(post => (
           <Card>
             <CardContent>

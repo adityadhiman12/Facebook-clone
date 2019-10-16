@@ -72,9 +72,14 @@ header {
 }
 .searchl {
   display: flex;
+  width: 30vw;
 }
 .navleft {
   display: flex;
+}
+
+.srch-icon{
+  margin-left: 20vw;
 }
 /*---------------------------------*/
 .navbar {
@@ -83,6 +88,10 @@ header {
   height: 45px;
   flex-grow: 1;
   justify-content: flex-start;
+}
+
+.fa-facebook-square{
+  color:white;
 }
 
 .navtxt{
@@ -125,3 +134,46 @@ header {
 }
 /*-----------------------------------------*/
 
+
+
+.flex-item1 {
+  flex-grow: 0.1;
+  padding-left:63px;
+}
+
+.left-panel {
+  list-style-type:none;
+  font-weight: 430;
+  margin-top: 10px;
+}
+
+.profile1 {
+  margin-top: -2px;
+}
+
+.left-user-image{
+  height: 28px;
+  width:28px;
+  border-radius:50%; 
+  padding:4px;
+}
+
+.left-panel {
+  list-style-type:none;
+  font-weight: 430;
+  margin-top: 10px;
+}
+
+.left-panel>li>a {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+.li {
+  margin-right: 100px;
+}

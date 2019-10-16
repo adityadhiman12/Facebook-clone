@@ -1,10 +1,11 @@
 .first-intro{
     margin-top: 20px;
     margin-left: 10px;
+    display: flex;
 }
 .textintro{
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     color: brown;
     margin-top: 10px;
 }
@@ -31,6 +32,7 @@
     color: blue;
     margin-top: 6px;
     margin-bottom: 6px;
+    font-size: 12px;
 }
 .line :hover{
     text-decoration: underline;
@@ -57,6 +59,11 @@
     overflow: hidden;
     outline:none;
 }
+
+.fa-globe-americas{
+    margin-top: 5px;
+}
+
 .sidegap2{
     margin-left: 160px;
     background-color: Transparent;

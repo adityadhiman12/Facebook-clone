@@ -52,10 +52,8 @@ export class intro extends Component {
             </li>
           </ul>
         </div>
-      <div>
-        {/* <SmallImagePanel/> */}
-      </div>
-        
+        <div>{/* <SmallImagePanel/> */}</div>
+
         {/* About smallintro Modal */}
 
         <div id="myModal" class="modal fade" role="dialog">
@@ -167,7 +165,6 @@ export class intro extends Component {
           </div>
         </div>
       </div>
-
     );
   }
 }

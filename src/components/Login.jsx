@@ -1,12 +1,8 @@
 import React, { useCallback, useContext } from "react";
-import {  Redirect } from "react-router";
+import { Redirect } from "react-router";
 import app from "../firebase/firebase";
 import { AuthContext } from "../firebase/auth";
 import "../App.css";
-
-
-
-
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -17,8 +13,7 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/user");
-        
+        history.push("/homepage");
       } catch (error) {
         alert(error);
       }
@@ -26,11 +21,10 @@ const Login = ({ history }) => {
     [history]
   );
 
-
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/user" />;
+    return <Redirect to="/homepage" />;
   }
 
   return (
@@ -42,19 +36,29 @@ const Login = ({ history }) => {
           <div className="user-input-login">
             <label>
               Email or phone
-              <input name="email" type="email" className="form-control" placeholder="Email" />
+              <input
+                name="email"
+                type="email"
+                className="form-control"
+                placeholder="Email"
+              />
             </label>
             <label>
               Password
-              <input name="password" type="password" className="form-control" placeholder="Password" />
+              <input
+                name="password"
+                type="password"
+                className="form-control"
+                placeholder="Password"
+              />
             </label>
-            <button type="submit" className="login-button">Log in</button>
+            <button type="submit" className="login-button">
+              Log in
+            </button>
           </div>
         </form>
       </div>
     </header>
- 
-      
   );
 };
 

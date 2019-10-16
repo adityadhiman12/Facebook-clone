@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 
 export class DetailAbout extends Component {
-
-  componentDidMount(){
+  componentDidMount() {
     document.querySelector("#defaultOpen").click();
   }
 
-  openTab=(event,tabName)=>{
-    let i,tabContent,tabLink;
-    tabContent=document.getElementsByClassName("tabcontent");
+  openTab = (event, tabName) => {
+    let i, tabContent, tabLink;
+    tabContent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabContent.length; i++) {
       tabContent[i].style.display = "none";
     }
@@ -20,34 +19,56 @@ export class DetailAbout extends Component {
 
     document.getElementById(tabName).style.display = "block";
     event.currentTarget.className += " active";
-
-  }
+  };
 
   render() {
     return (
       <div>
         <div>
           <div class="tab">
-            <button class="tablinks"
-            onClick={event=>this.openTab(event, 'overview')}
-            id="defaultOpen">
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "overview")}
+              id="defaultOpen"
+            >
               Overview
             </button>
-            <button class="tablinks" onClick={event=>this.openTab(event, 'WorkandEducation')}>Work and Education</button>
-            <button class="tablinks"
-            onClick={event=>this.openTab(event, 'PlacesYouhaveVisited')}>Places You've Visited</button>
-            <button class="tablinks"
-            onClick={event=>this.openTab(event, 'ContactandBasicDetails')}
-            >Contact and Basic Details</button>
-            <button class="tablinks"
-            onClick={event=>this.openTab(event, 'FamilyandRelationships')}
-            >Family and Relationships</button>
-            <button class="tablinks"
-            onClick={event=>this.openTab(event, 'DetailsAboutYou')}
-            >Details About You</button>
-            <button class="tablinks"
-            onClick={event=>this.openTab(event, 'LifeEvents')}
-            >Life Events</button>
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "WorkandEducation")}
+            >
+              Work and Education
+            </button>
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "PlacesYouhaveVisited")}
+            >
+              Places You've Visited
+            </button>
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "ContactandBasicDetails")}
+            >
+              Contact and Basic Details
+            </button>
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "FamilyandRelationships")}
+            >
+              Family and Relationships
+            </button>
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "DetailsAboutYou")}
+            >
+              Details About You
+            </button>
+            <button
+              class="tablinks"
+              onClick={event => this.openTab(event, "LifeEvents")}
+            >
+              Life Events
+            </button>
           </div>
 
           <div id="overview" class="tabcontent overview">
@@ -143,17 +164,13 @@ export class DetailAbout extends Component {
 
           <div id="DetailsAboutYou" class="tabcontent DetailsAboutYou">
             <p className="nameline2">ABOUT YOU</p>
-            <p>
-                Just a common person,working hard silently.
-            </p>
+            <p>Just a common person,working hard silently.</p>
             <p className="nameline2">OTHER NAMES</p>
             <div className="aline1">
               <a href=" ">+ Add a nickname , a birth name</a>
             </div>
             <p className="nameline2">FAVORITE QUOTES</p>
-            <p>
-                Keep your dream alive,even if you are going with a slow place,just keep it alive.
-            </p>
+            <p>Invest in yourself.</p>
           </div>
 
           <div id="LifeEvents" class="tabcontent LifeEvents">
