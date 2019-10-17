@@ -3,7 +3,6 @@ import "../App.css";
 import Posts from "../components/posts/Posts";
 import ShowPost from "./ShowPost";
 import Navbar from "./Navbar";
-import app from "../firebase/firebase";
 import axios from "axios"
 import Post from "./Post"
 import { withStyles } from "@material-ui/styles";
@@ -26,16 +25,23 @@ export class User extends Component {
     postings: null
   };
   componentDidMount(){
-    axios.get('/posts')
+    axios.get('/posts', { headers: {"Authorization" : `${localStorage.FBIdToken}`} })
     .then(res => {
       // console.log(res)
-      // console.log(res.data)
+      console.log(res.data)
       this.setState({
         postings: res.data
       });
+      console.log(this.state.postings)
     }).catch(err => console.log(err))
   }
 
+  logoutUser = () => {
+  localStorage.removeItem('FBIdToken');
+  delete axios.defaults.headers.common['Authorization'];
+  window.location.replace("/login")
+
+}
 
 
 
@@ -69,7 +75,7 @@ export class User extends Component {
           {this.state.click === "yes" && <ShowPost posts={this.state.posts} />}
         </div>
         <div className={classes.newsFeedPosts}>{recentPostsdata}</div>
-        <button onClick={() => app.auth().signOut()}>Sign out</button>
+        <button onClick={this.logoutUser}>Sign out</button>
       </div>
     );
   }

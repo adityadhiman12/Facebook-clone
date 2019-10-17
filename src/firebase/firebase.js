@@ -8,5 +8,6 @@ const firebaseSetup = firebase.initializeApp({
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID
   });
+  // console.log(firebaseSetup.firebase_.auth());
 
   export default firebaseSetup;

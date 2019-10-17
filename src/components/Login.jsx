@@ -24,12 +24,14 @@ class login extends Component {
       };
       
       axios.post('/login', userData).then(res => {
-        localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
-        console.log(res.data);
+        console.log(res.data.token)
+        // console.log(res.data);
         this.setState({
           loading:false
         })
-        this.props.history.push('/');
+        const FBIdToken =`Bearer ${res.data.token}`
+        localStorage.setItem('FBIdToken', FBIdToken);
+        this.props.history.push('/user');
       }).catch(err => {
         this.setState({
           errors: err.response.data,
@@ -53,11 +55,11 @@ class login extends Component {
             <div className="user-input-login">
               <label>
                 Email or phone
-                <input name="email" helperText={errors.email} error = {errors.email ? true : false} type="email" className="form-control" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
+                <input name="email"   type="email" className="form-control" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
               </label>
               <label>
                 Password
-                <input name="password" type="password" className="form-control" helperText={errors.password} error = {errors.password ? true : false} placeholder="Password" value={this.state.password}onChange={this.handleChange} />
+                <input name="password" type="password" className="form-control"  placeholder="Password" value={this.state.password}onChange={this.handleChange} />
               </label>
               {errors.general && (
                 <p>{errors.general}</p>

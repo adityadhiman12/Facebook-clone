@@ -84,7 +84,9 @@ header {
   flex-grow: 1;
   justify-content: flex-start;
 }
-
+.fa-facebook-square{
+  color:white;
+}
 .navtxt{
   color:white;
 }
@@ -125,3 +127,6 @@ header {
 }
 /*-----------------------------------------*/
 
+.landing{
+  margin-top: 100px;
+}

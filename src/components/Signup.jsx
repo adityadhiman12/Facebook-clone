@@ -53,7 +53,7 @@ class Signup extends Component {
     return (
 
       <div>
-        <article className="container">
+        <article className="container landing">
           <div className="row">
             <div className="col-sm-8">
               <h4 className="signup-facebook-help">
