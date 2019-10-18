@@ -6,6 +6,7 @@ import "../App.css";
 import Posts from "./posts/Posts";
 import Post from "./Post";
 import ShowPost from "./ShowPost";
+import Friends from "../components/Friends"
 
 class profile extends Component {
   state = {
@@ -20,7 +21,7 @@ class profile extends Component {
       .get("/user", { headers: { Authorization: `${localStorage.FBIdToken}` } })
       .then(res => {
         this.setState({ user: res.data.credentials });
-        // console.log(this.state.user);
+        console.log(this.state.user.friends);
       })
       .catch(err => console.log(err));
     axios
@@ -129,7 +130,9 @@ class profile extends Component {
             </nav>
           </div>
           <div className="profile-body">
-            <div className="user-bio"></div>
+            <div className="user-bio">
+              <Friends friends={this.state.user.friends}/>
+            </div>
             <div className="posts">
               <Posts
                 handleChange={this.handleChange}

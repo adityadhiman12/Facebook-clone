@@ -53,6 +53,7 @@ const App = () => {
           />
           <PrivateRoute exact path="/user" component={userhome} authenticated={authenticated}/>
           <PrivateRoute exact path="/profile" component={Profile} authenticated={authenticated}/>
+          
         </div>
       </Router>
   );
