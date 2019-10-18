@@ -26,7 +26,7 @@ export class Navbar extends Component {
           <div className="navright">
             <div>
               {/* <img
-                src={this.props.user.user[0].Profile_pic}
+                src=
                 alt="Image of woman"
                 className="nav-user-image"
               /> */}
@@ -36,19 +36,17 @@ export class Navbar extends Component {
                 {" "}
                 <p className="navtxt">
                   User Profile
-                  {/* {user[0].firstName} {user[0].surName}  */}
+                  {/* user name*/}
                 </p>{" "}
               </Link>
               <p className="navtxt">|</p>
 
               <div className="dropdown">
                 <i
-                  // onClick={this.myFunction}
+                  // onClick=
                   className="fas fa-user-friends fa-lg"
                 ></i>
-                <div id="myDropdown" className="dropdown-content">
-                  {/* <Friends friendRequest={friendRequest} /> */}
-                </div>
+                <div id="myDropdown" className="dropdown-content"></div>
               </div>
               <Link to="/">
                 {" "}
@@ -70,10 +68,6 @@ export class Navbar extends Component {
                 <i className="fas fa-user-friends fa-lg"></i>
               </Link>{" "}
             </div>
-
-            {/* <div className="right-navbar-icon">
-              <i className="fas fa-question-circle fa-lg"></i>
-            </div> */}
 
             <div className="right-navbar-icon">
               {" "}
