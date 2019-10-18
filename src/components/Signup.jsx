@@ -24,7 +24,6 @@ class Signup extends Component {
       confirmPassword: this.state.confirmPassword,
       handle: this.state.handle
     };
-    if(this.state.password === this.state.confirmPassword){
       axios
       .post("/signup", newUserData)
       .then(res => {
@@ -41,7 +40,7 @@ class Signup extends Component {
           loading: false
         });
       });
-    }
+    
     
   };
 

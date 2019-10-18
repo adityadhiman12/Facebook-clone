@@ -10,10 +10,6 @@ import "./css/posts.css";
 
 export class Posts extends Component {
   render() {
-    // console.log(this.props)
-    
-    // const {classes, post: {userImage, userHandle, body, createdAt}} = this.props;
-    
 
 
     return (
@@ -29,7 +25,6 @@ export class Posts extends Component {
         />
 
         <div className="card-footer">
-          {/* <div className="createfooter1"> */}
             <ul className="post-footer">
               <li className="li">
                 <div className="fk">

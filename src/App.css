@@ -79,27 +79,27 @@ header {
 /*---------------------------------*/
 .navbar {
   display: flex;
-  background-color:#4267b2;
+  background-color: #4267b2;
   height: 45px;
   flex-grow: 1;
   justify-content: flex-start;
 }
-.fa-facebook-square{
-  color:white;
+.fa-facebook-square {
+  color: white;
 }
-.navtxt{
-  color:white;
+.navtxt {
+  color: white;
 }
 
-.container{
+.container {
   margin-left: 350px;
 }
 
 .srch-icon {
-  transform: translate(206px,-30px);
+  transform: translate(206px, -30px);
 }
 .fb-icon {
-  transform:translate(1px,-11px);
+  transform: translate(1px, -11px);
 }
 .navbar i {
   padding: 10px;
@@ -122,11 +122,66 @@ header {
   padding: 10px;
 }
 
-.right-navbar-icon i{
-  color:#212529;
+.right-navbar-icon i {
+  color: #212529;
 }
 /*-----------------------------------------*/
 
-.landing{
+.landing {
   margin-top: 100px;
+}
+
+/* Profile Page styles//////////////////////////// */
+
+.profile {
+  height: auto;
+}
+.profile-header {
+  width: 80%;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.profile-cover {
+  max-height: 800px;
+}
+.profile-thumbnail {
+  position: absolute;
+  top: 444px;
+    left: 15vw;
+}
+.profile-picture {
+  border-radius: 100%;
+  width: 277px;
+  height: 264px;
+  border: 2px solid white;
+}
+.profile-name {
+  position: absolute;
+  top: 567px;
+  left: 33vw;
+  color: white;
+  font-size: 36px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  line-height: 30px;
+  max-width: 275px;
+}
+.profile-navbar {
+  z-index: -1;
+  width: 960px;
+  margin: auto;
+}
+.profile-nav {
+  margin: auto;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: 348px;
+  grid-gap: 78px;
+}
+.profile-body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
