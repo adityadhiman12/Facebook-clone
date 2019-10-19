@@ -91,7 +91,7 @@ class Navbar extends Component {
             </div>
 
             <div className="right-navbar-icon">
-              <Link to="notification">
+              <Link to="notifications">
                 {" "}
                 <i className="fas fa-bell fa-lg"></i>
               </Link>{" "}

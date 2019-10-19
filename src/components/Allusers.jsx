@@ -4,41 +4,33 @@ import Addusers from "./Adduser";
 
 class Allusers extends Component {
   state = {
-    user: null
+    user: []
   };
-  componentDidUpdate() {
-    axios
-      .get("/alluser")
-      .then(profile => {
-        console.log(profile);
-        this.setState({ user: profile.data });
-        console.log(this.state.user);
-      })
-      .catch(err => console.log(err));
-  }
   componentDidMount() {
     axios
       .get("/alluser")
       .then(profile => {
-        console.log(profile);
         this.setState({ user: profile.data });
-        console.log(this.state.user);
+        // console.log(this.state.user);
       })
       .catch(err => console.log(err));
   }
 
   render() {
-    
-    
     return (
-      <p>hello</p>
-        //       <div>
-        //           {this.state.user.map(user => (
-        //     <div>
-        //       <Addusers item={user} />
-        //     </div>
-        //   ))}
-        // </div>
+      // <div>
+      //   {this.state.user.map(user => (
+      //     <p>{user.handle}</p>
+      //   ))}
+      // </div>
+
+            <div>
+                {this.state.user.map(user => (
+          <div>
+            <Addusers item={user} />
+          </div>
+        ))}
+      </div>
     );
   }
 }
