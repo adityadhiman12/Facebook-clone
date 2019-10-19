@@ -1,22 +1,36 @@
 import React, { Component } from "react";
+import axios from "axios";
+import Sender from "./Sender"
 
 class Notifications extends Component {
   state = {
-    accept: false,
-    user: {}
+    users: []
   };
 
-  componentDidMount() {
-    axios
+   componentDidMount() {
+     axios
       .get("/user", { headers: { Authorization: `${localStorage.FBIdToken}` } })
       .then(res => {
-        this.setState({ user: res.data.credentials });
+          console.log(res.data.credentials.requests)
+          this.setState({ users: this.state.users.concat(res.data.credentials.requests) });
+          console.log(this.state.users);
       })
       .catch(err => console.log(err));
   }
+  
+  
 
   render() {
-    return <p>hello</p>;
+
+    
+    return (
+        <div>
+            {this.state.users.map(sender => (
+                <Sender item={sender}/>
+            ))}
+            
+      </div>
+    )
   }
 }
 

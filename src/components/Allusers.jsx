@@ -11,7 +11,7 @@ class Allusers extends Component {
       .get("/alluser")
       .then(profile => {
         this.setState({ user: profile.data });
-        // console.log(this.state.user);
+        console.log(this.state.user);
       })
       .catch(err => console.log(err));
   }
