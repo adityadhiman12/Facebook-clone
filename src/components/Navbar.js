@@ -8,11 +8,11 @@ class Navbar extends Component {
     search: "",
     user: {}
   };
-  componentDidMount(){
+  componentDidMount() {
     // console.log(this.props)
   }
   handleClick = event => {
-    console.log("executing")
+    console.log("executing");
     if (this.state.search.length !== 0) {
       axios
         .get(`/user/${this.state.search}`, {
@@ -21,7 +21,7 @@ class Navbar extends Component {
         .then(res => {
           this.setState({ user: res.data[0] });
           console.log(this.state.user.handle);
-          this.props.history.replace(`/user/${this.state.user.handle}`)
+          this.props.history.replace(`/user/${this.state.user.handle}`);
         })
         .catch(err => {
           console.log(err);
@@ -52,9 +52,10 @@ class Navbar extends Component {
                 type="text"
                 placeholder="search"
                 onChange={this.handleChange}
-                
               />
-              <button type="submit" onClick={this.handleClick}>search</button>
+              <button type="submit" onClick={this.handleClick}>
+                search
+              </button>
               <i className="fas fa-search srch-icon"></i>
             </div>
           </div>
