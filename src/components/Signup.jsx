@@ -24,7 +24,7 @@ class Signup extends Component {
       confirmPassword: this.state.confirmPassword,
       handle: this.state.handle
     };
-      axios
+    axios
       .post("/signup", newUserData)
       .then(res => {
         localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`);
@@ -40,17 +40,14 @@ class Signup extends Component {
           loading: false
         });
       });
-    
-    
   };
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
-    const {errors, loading} = this.state;
+    const { errors, loading } = this.state;
     return (
-
       <div>
         <article className="container landing">
           <div className="row">
@@ -83,7 +80,8 @@ class Signup extends Component {
                       type="email"
                       className="form-control"
                       placeholder="Email Address"
-                      value={this.state.email} onChange={this.handleChange}
+                      value={this.state.email}
+                      onChange={this.handleChange}
                     />
                   </label>
                 </div>
@@ -96,7 +94,8 @@ class Signup extends Component {
                       name="password"
                       className="form-control"
                       placeholder="Password"
-                      value={this.state.password} onChange={this.handleChange}
+                      value={this.state.password}
+                      onChange={this.handleChange}
                     />
                   </label>
                 </div>
@@ -108,7 +107,8 @@ class Signup extends Component {
                       type="password"
                       className="form-control"
                       placeholder="Confirm Password"
-                      value={this.state.confirmPassword} onChange={this.handleChange}
+                      value={this.state.confirmPassword}
+                      onChange={this.handleChange}
                     />
                   </label>
                 </div>
@@ -120,7 +120,8 @@ class Signup extends Component {
                       type="text"
                       className="form-control"
                       placeholder="User Name"
-                      value={this.state.handle} onChange={this.handleChange}
+                      value={this.state.handle}
+                      onChange={this.handleChange}
                     />
                   </label>
                 </div>

@@ -10,16 +10,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import jwtDecode from "jwt-decode";
 import AuthRoute from "./utils/AuthRoute";
 import PrivateRoute from "./utils/auth";
-
+import Allusers from "./components/Allusers"
+import Navbar from "./components/Navbar"
 
 const logoutUser = () => {
-  localStorage.removeItem('FBIdToken');
-  window.location.replace("/login")
-
-}
-
-
-
+  localStorage.removeItem("FBIdToken");
+  window.location.replace("/login");
+};
 
 let authenticated;
 const token = localStorage.FBIdToken;
@@ -36,26 +33,53 @@ if (token) {
 
 const App = () => {
   return (
-      <Router>
-        <div>
-          <Route exact path="/" component={Home} />
-          <AuthRoute
-            exact
-            path="/login"
-            component={Login}
-            authenticated={authenticated}
-          />
-          <AuthRoute
-            exact
-            path="/login"
-            component={SignUp}
-            authenticated={authenticated}
-          />
-          <PrivateRoute exact path="/user" component={userhome} authenticated={authenticated}/>
-          <PrivateRoute exact path="/profile" component={Profile} authenticated={authenticated}/>
-          
-        </div>
-      </Router>
+    <Router>
+      <div>
+        <Route exact path="/" component={Home} />
+        <AuthRoute
+          exact
+          path="/login"
+          component={Login}
+          authenticated={authenticated}
+        />
+        <AuthRoute
+          exact
+          path="/login"
+          component={SignUp}
+          authenticated={authenticated}
+        />
+        <PrivateRoute
+          exact
+          path="/user"
+          component={Navbar}
+          authenticated={authenticated}
+        />
+        <PrivateRoute
+          exact
+          path="/profile"
+          component={Navbar}
+          authenticated={authenticated}
+        />
+        <PrivateRoute
+          exact
+          path="/user"
+          component={userhome}
+          authenticated={authenticated}
+        />
+        <PrivateRoute
+          exact
+          path="/profile"
+          component={Profile}
+          authenticated={authenticated}
+        />
+        <PrivateRoute
+          exact
+          path="/addfriends"
+          component={Allusers}
+          authenticated={authenticated}
+        />
+      </div>
+    </Router>
   );
 };
 
