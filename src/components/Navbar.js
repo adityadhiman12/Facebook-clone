@@ -53,10 +53,10 @@ class Navbar extends Component {
                 placeholder="search"
                 onChange={this.handleChange}
               />
-              <button type="submit" onClick={this.handleClick}>
-                search
-              </button>
-              <i className="fas fa-search srch-icon"></i>
+              {/* <button onClick={this.handleClick}> */}
+                {/* search */}<i className="fas fa-search srch-icon" onClick={this.handleClick}></i>
+              {/* </button> */}
+              
             </div>
           </div>
           <div className="navright">
