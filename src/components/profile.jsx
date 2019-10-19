@@ -171,7 +171,6 @@ class profile extends Component {
           </div>
         </div>
         {/* cover pic modal ends */}
-        <button onClick={this.logoutUser}>Sign out</button>
       </div>
     );
   }

@@ -35,6 +35,13 @@ class Navbar extends Component {
   handleChange = event => {
     this.setState({ search: event.target.value });
   };
+
+  logoutUser = () => {
+    localStorage.removeItem("FBIdToken");
+    delete axios.defaults.headers.common["Authorization"];
+    window.location.replace("/login");
+  };
+
   render() {
     return (
       <div className="navbar" sticky="top">
@@ -54,9 +61,12 @@ class Navbar extends Component {
                 onChange={this.handleChange}
               />
               {/* <button onClick={this.handleClick}> */}
-                {/* search */}<i className="fas fa-search srch-icon" onClick={this.handleClick}></i>
+              {/* search */}
+              <i
+                className="fas fa-search srch-icon"
+                onClick={this.handleClick}
+              ></i>
               {/* </button> */}
-              
             </div>
           </div>
           <div className="navright">
@@ -107,7 +117,21 @@ class Navbar extends Component {
 
             <div className="right-navbar-icon">
               {" "}
-              <i className="fas fa-caret-down fa-lg"></i>
+              <div class="dropdown">
+                <button
+                  class="btn btn-primary dropdown-toggle drop-down-logout"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                >
+                  <i className="fas fa-caret-down fa-lg"></i>
+                </button>
+                <div className="dropdown-menu">
+                  {/* <a className="dropdown-item" > */}
+                  <button onClick={this.logoutUser}>Sign out</button>
+                  {/* </a> */}
+                </div>
+              </div>
             </div>
           </div>
         </div>

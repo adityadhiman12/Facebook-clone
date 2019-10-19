@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Sender from "./Sender"
-
 class Notifications extends Component {
   state = {
     users: []
