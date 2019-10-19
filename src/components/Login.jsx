@@ -31,6 +31,7 @@ class login extends Component {
         const FBIdToken = `Bearer ${res.data.token}`;
         localStorage.setItem("FBIdToken", FBIdToken);
         this.props.history.push("/user");
+        window.location.reload();
       })
       .catch(err => {
         this.setState({

@@ -33,6 +33,7 @@ class Signup extends Component {
           loading: false
         });
         this.props.history.push("/");
+        window.location.reload();
       })
       .catch(err => {
         this.setState({

@@ -61,6 +61,7 @@ class Post extends Component {
             {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
+          
         </CardContent>
       </Card>
     );

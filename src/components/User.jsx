@@ -76,6 +76,7 @@ export class User extends Component {
         {/* <Navbar /> */}
 
         <div className="posts">
+        {" "}
           <Posts
             handleChange={this.handleChange}
             handleClick={this.handleClick}
