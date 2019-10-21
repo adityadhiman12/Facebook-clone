@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import axios from "axios";
+require("../App.css");
 
 const styles = {
   card: {
@@ -44,28 +41,54 @@ class ShowPost extends Component {
     });
 
     return posts.map(post => (
-      <Card className={classes.card}>
-        <CardMedia
-          src={imageUrl}
-          title="Profile image"
-          className={classes.image}
-          component="img"
-        />
-        <CardContent className={classes.content}>
-          <Typography
-            variant="h5"
+      <div className="card">
+        <div className="card-header">
+          <img
+            className="round-img"
+            src={imageUrl}
             component={Link}
-            to={`profile`}
-            color="primary"
-          >
+            to={`/profile`}
+            className="round-img"
+          />
+          <div className="fetched-post-content">
             {handle}
-          </Typography>
-          <Typography variant="body2" color="textSecondary">
-            {dayjs(post.time).fromNow()}
-          </Typography>
-          <Typography variant="body1">{post.text}</Typography>
-        </CardContent>
-      </Card>
+            <div className="ageOfPost">{dayjs(post.time).fromNow()}</div>
+          </div>
+        </div>
+        <div class="card-body">{post.text}</div>
+        <div className="card-footer">
+          <div className="createfooter">
+            {/* <div className="like-comment-button"> */}
+            <div className="footer">
+              <i class="far fa-thumbs-up"></i>
+              <button onClick="" className="likebtn1">
+                {" "}
+                Like
+              </button>
+              {/* <> total number of likes on post</> */}
+            </div>
+            <div className="footer">
+              <i class="far fa-comment-alt"> Comment</i>
+            </div>
+            {/* </div> */}
+          </div>
+        </div>
+        <div className="cmnts">
+          {/* <img className="nav-user-image" src={userImage} alt="" /> */}
+          <textarea
+            className="comments"
+            name="comments"
+            value=""
+            placeholder="Write a comment..."
+            rows="1"
+            cols="50"
+            onChange=""
+          />
+          <button className="btn btn-primary btn-xs _btnsize" onClick="">
+            Post
+          </button>
+        </div>
+      </div>
     ));
   }
 }

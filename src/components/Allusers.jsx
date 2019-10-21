@@ -9,9 +9,14 @@ class Allusers extends Component {
   };
   componentDidMount() {
     axios
-      .get("/alluser")
+      .get("/alluser", {
+        headers: {
+          Authorization: `${localStorage.FBIdToken}`
+        }
+      })
       .then(profile => {
         this.setState({ user: profile.data });
+        console.log(this.state.user);
       })
       .catch(err => console.log(err));
   }

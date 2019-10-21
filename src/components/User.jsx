@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "../App.css";
 import Posts from "../components/posts/Posts";
 import ShowPost from "./ShowPost";
-import {storage} from "../firebase/firebase"
-// import Navbar from "./Navbar";
 import axios from "axios";
 import Post from "./Post";
 import { withStyles } from "@material-ui/styles";
@@ -86,7 +84,6 @@ export class User extends Component {
           )}
         </div>
         <div className={classes.newsFeedPosts}>{recentPostsdata}</div>
-        <button onClick={this.logoutUser}>Sign out</button>
       </div>
     );
   }

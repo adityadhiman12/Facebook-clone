@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
-import dayjs from "dayjs"
-import relativeTime from 'dayjs/plugin/relativeTime'
-
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+require("../App.css");
 
 const styles = {
   card: {
     position: "relative",
     display: "flex",
     marginBottom: 20,
-    padding:30
+    padding: 30
   },
   image: {
     padding: 70,
@@ -29,40 +25,69 @@ const styles = {
 class Post extends Component {
   state = {};
   render() {
-    dayjs.extend(relativeTime)
+    dayjs.extend(relativeTime);
     const {
       classes,
-      post: {
-        body,
-        createdAt,
-        userImage,
-        userHandle
-      }
+      post: { body, createdAt, userImage, userHandle }
     } = this.props;
     return (
-      <Card className={classes.card}>
-        <CardMedia
-          image={userImage}
-          title="Profile image"
-          className={classes.image}
-          component={Link}
-          to={`/profile`}
-        />
-        <CardContent className={classes.content}>
-          <Typography
-            variant="h5"
-            component={Link}
-            to={`profile`}
-            color="primary"
-          >
-            {userHandle}
-          </Typography>
-          <Typography variant="body2" color="textSecondary">
-            {dayjs(createdAt).fromNow()}
-          </Typography>
-          <Typography variant="body1">{body}</Typography>
-        </CardContent>
-      </Card>
+      // one way of showing post
+      <div>
+        <div className="mainpage-container">
+          {/* <div className="flex-item4"> */}
+          <div className="container-6">
+            <div className="card">
+              <div className="card-header">
+                <img
+                  className="round-img"
+                  src={userImage}
+                  component={Link}
+                  to={`/profile`}
+                  className="round-img"
+                />
+                <div className="fetched-post-content">
+                  {userHandle}
+                  <div className="ageOfPost">{dayjs(createdAt).fromNow()}</div>
+                </div>
+              </div>
+              <div class="card-body">{body}</div>
+
+              <div className="card-footer">
+                <div className="createfooter">
+                  {/* <div className="like-comment-button"> */}
+                  <div className="footer">
+                    <i class="far fa-thumbs-up"></i>
+                    <button  className="likebtn1">
+                      {" "}
+                      Like
+                    </button>
+                    {/* <> insert total number of likes on post</> */}
+                  </div>
+                  <div className="footer">
+                    <i class="far fa-comment-alt"> Comment</i>
+                  </div>
+                  {/* </div> */}
+                </div>
+              </div>
+              <div className="cmnts">
+                {/* <img className="nav-user-image" src={userImage} alt="" /> */}
+                <textarea
+                  className="comments"
+                  name="comments"
+                  value=""
+                  placeholder="Write a comment..."
+                  rows="1"
+                  cols="50"
+                />
+                <button className="btn btn-primary btn-xs _btnsize" >
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* </div> */}
+        </div>
+      </div>
     );
   }
 }

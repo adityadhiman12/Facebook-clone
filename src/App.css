@@ -485,14 +485,167 @@ img {
   margin-right: 20px;
 }
 /*frnds page where all users are available////////////*/
-.container-users{
-  margin-top:2%;
-  width:100%;
-  display:flex;
+.container-users {
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
   justify-content: center;
 }
 
-.all-users{
+.all-users {
   width: 60%;
+}
+
+.cancel-request {
+  margin-left: 10px;
+}
+
+.createfooter {
+  display: flex;
+  margin-left: auto;
+  justify-content: space-between;
+  padding: -5px;
+  box-sizing: none;
+}
+
+.mainpage-container {
+  display: flex;
+  background-color: #dcdcdc;
+  padding: 10px;
+}
+
+.container-6 {
+  width: 100%;
+}
+
+.card-header {
+  padding: 8px 24px 8px 0px;
+  padding-left: 8px;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  font-weight: bold;
+  font-size: 12.5px;
+  color: #4b4f56;
+}
+
+.round-img {
+  border-radius: 50%;
+  border: 3px solid black;
+  height: 75.5px;
+  width: 75.5px;
+}
+
+.card-footer {
+  /* changes here */
+  border-top: 1px solid #e9ebee;
+  margin-top: 0px;
+  margin-right: 12px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-right: 0px;
+  padding-bottom: 8px;
+  padding-left: 0px;
+  background-color: white;
+}
+
+.card-header {
+  display: flex;
+}
+.fetched-post-content {
+  margin-top: 1%;
+  margin-left: 2%;
+  font-size: 25px;
+}
+
+.post-user-image {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  margin-left: 7px;
+  margin-top: 4px;
+}
+
+.friends-name {
+  color: #385898;
+  font: 17px Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.likebtn {
+  border-radius: 50%;
+  /* width: 5%; */
+  height: 5%;
+  color: #3b5998;
+}
+
+.pst {
+  list-style-type: none;
+  font-family: inherit;
+  align-items: center;
+  color: #606770;
+  display: flex;
+  flex: 1 0;
+  font-weight: 600;
+  height: 32px;
+  justify-content: space-around;
+  line-height: 14px;
+  padding: 0 2px;
+  position: relative;
+  text-decoration: none;
+  transition: 400ms cubic-bezier(.08,.52,.52,1) transform;
+  font-size: 15px;
+}
+
+.likebtn1 {
+  font-weight: 600;
+  background-color: transparent;
+  color: #606770;
+  font-size: 15px;
+  border:none;
+}
+
+.cmnts {
+  margin-left: 10px;
+  margin-bottom: 10px;/* changed */
+  margin-right: 0px;
+  margin-top: 20px;
+}
+
+.comments {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 13.5px;
+  border-radius: 16px;
+  resize: none;
+  border: 1px solid grey;
+  background-color: #f2f3f5;
+  font-family: inherit;
+  top: 10px;
+  display: inline-block;
+  border: 1px solid #ccd0d5;
+  width:350px;
+  height:40px;
+  padding-top: 7.5px;/* changed */
+  margin-left:5px;
+}
+.comments:focus {
+  background:  transparent;
+}
+
+.nav-user-image{
+  height: 26px;
+  width:26px;
+  border-radius:50%; margin-bottom: 25px;
   
+}
+
+._btnsize{
+  height:35px;
+  margin-left: 8px;
+  margin-bottom: 30px;
+}
+
+.ageOfPost{
+  font-size: 10px;
 }

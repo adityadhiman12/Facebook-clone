@@ -88,6 +88,12 @@ const App = () => {
         <PrivateRoute
           exact
           path="/notifications"
+          component={Navbar}
+          authenticated={authenticated}
+        />
+        <PrivateRoute
+          exact
+          path="/notifications"
           component={Notifications}
           authenticated={authenticated}
         />
