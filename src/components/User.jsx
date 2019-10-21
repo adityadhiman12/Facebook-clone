@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "../App.css";
 import Posts from "../components/posts/Posts";
 import ShowPost from "./ShowPost";
-import Navbar from "./Navbar";
+import {storage} from "../firebase/firebase"
+// import Navbar from "./Navbar";
 import axios from "axios";
 import Post from "./Post";
 import { withStyles } from "@material-ui/styles";

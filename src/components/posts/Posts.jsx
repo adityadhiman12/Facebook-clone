@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import "./css/posts.css";
+import axios from "axios";
 
 export class Posts extends Component {
+  state = {
+    image: null,
+    url: ""
+  };
+
+
   render() {
     return (
       <div>
@@ -19,19 +26,24 @@ export class Posts extends Component {
           <ul>
             <div className="fk">
               <div className="space buttonwrapper3">
-                <button className="add-img">
+                {/* <button className="add-img">
                   <i
                     className="fas fa-photo-video fa-lg"
                     style={{ color: "blue" }}
                   ></i>{" "}
                   Photo{" "}
+                </button> */}
+                <button
+                  className="fas fa-photo-video fa-lg"
+                  style={{ color: "blue" }}
+                >
+                  <input
+                    name="img"
+                    type="file"
+
+                    onChange={this.handleChangeImage}
+                  />
                 </button>
-                <input
-                  name="img"
-                  type="file"
-                  defaultValue=""
-                  // onChange
-                />
               </div>
 
               <Button
