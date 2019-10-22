@@ -3,6 +3,7 @@ import "../App.css";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
+<<<<<<< HEAD
 class Signup extends Component {
   state = {};
   state = {
@@ -42,6 +43,25 @@ class Signup extends Component {
         });
       });
   };
+=======
+const SignUp = ({ history }) => {
+  const handleSignUp = useCallback(
+    async event => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
+      try {
+        await app
+          .auth()
+          .createUserWithEmailAndPassword(email.value, password.value);
+        history.push("/homepage");
+        alert("Account created");
+      } catch (error) {
+        alert(error);
+      }
+    },
+    [history]
+  );
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });

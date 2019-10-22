@@ -73,13 +73,20 @@ header {
 .searchl {
   display: flex;
   width: 30vw;
+<<<<<<< HEAD
 }
 
 .srch-icon {
   margin-left: 19.5vw;
+=======
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
 }
 .navleft {
   display: flex;
+}
+
+.srch-icon{
+  margin-left: 20vw;
 }
 /*---------------------------------*/
 .navbar {
@@ -96,10 +103,19 @@ header {
   color: white;
 }
 
+<<<<<<< HEAD
 .dropdown-toggle {
   background-color: #4267b2;
   margin-top: -8px;
   height: 45px;
+=======
+.fa-facebook-square{
+  color:white;
+}
+
+.navtxt{
+  color:white;
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
 }
 
 .dropdown-menu button {
@@ -151,6 +167,7 @@ header {
 }
 /*-----------------------------------------*/
 
+<<<<<<< HEAD
 .landing {
   margin-top: 100px;
 }
@@ -648,4 +665,48 @@ img {
 
 .ageOfPost{
   font-size: 10px;
+=======
+
+
+.flex-item1 {
+  flex-grow: 0.1;
+  padding-left:63px;
+}
+
+.left-panel {
+  list-style-type:none;
+  font-weight: 430;
+  margin-top: 10px;
+}
+
+.profile1 {
+  margin-top: -2px;
+}
+
+.left-user-image{
+  height: 28px;
+  width:28px;
+  border-radius:50%; 
+  padding:4px;
+}
+
+.left-panel {
+  list-style-type:none;
+  font-weight: 430;
+  margin-top: 10px;
+}
+
+.left-panel>li>a {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+.li {
+  margin-right: 100px;
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
 }

@@ -57,9 +57,15 @@ ul {
   border-bottom-left-radius: 18px;
 }
 
+<<<<<<< HEAD
 .buttonwrapper3 {
   width: 265px;
   height: 35px;
+=======
+.buttonwrapper1 {
+  width: 12vw;
+  height: 36px;
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
   text-align: center;
 }
 

@@ -60,7 +60,13 @@ class intro extends Component {
             </li>
           </ul>
         </div>
+        <div>{/* <SmallImagePanel/> */}</div>
 
+<<<<<<< HEAD:src/components/intro/Intro.js
+=======
+        {/* About smallintro Modal */}
+
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab:src/components/profile/Intro.jsx
         <div id="myModal" class="modal fade" role="dialog">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

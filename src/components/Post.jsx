@@ -28,7 +28,19 @@ class Post extends Component {
     dayjs.extend(relativeTime);
     const {
       classes,
+<<<<<<< HEAD
       post: { body, createdAt, userImage, userHandle }
+=======
+      post: {
+        body,
+        createdAt,
+        userImage,
+        userHandle,
+        // screamId,
+        // likeCount,
+        // commentCount
+      }
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
     } = this.props;
     return (
       // one way of showing post

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import dayjs from "dayjs";
@@ -88,6 +89,26 @@ class ShowPost extends Component {
             Post
           </button>
         </div>
+=======
+import "../App.css";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+export class ShowPost extends Component {
+  render() {
+    return (
+      <div className="showPost">
+        {this.props.posts.map(post => (
+          <Card>
+            <CardContent>
+              <Typography variant="body2" component="p">
+                <p>{post.text}</p>
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}{" "}
+        <br />
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
       </div>
     ));
   }

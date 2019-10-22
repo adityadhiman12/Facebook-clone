@@ -73,6 +73,7 @@ class Navbar extends Component {
             </div>
           </div>
           <div className="navright">
+<<<<<<< HEAD
             <div>
               {/* <img
                 src=
@@ -80,19 +81,29 @@ class Navbar extends Component {
                 className="nav-user-image"
               /> */}
             </div>
+=======
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
             <div className="color">
               <Link to="/profile">
                 {" "}
                 <p className="navtxt">
                   User Profile
+<<<<<<< HEAD
                   {/* user name*/}
+=======
+                  {/* or else name of user */}
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
                 </p>{" "}
               </Link>
               <p className="navtxt">|</p>
 
               <div className="dropdown">
                 <i
+<<<<<<< HEAD
                   // onClick=
+=======
+                  // onClick=" "
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
                   className="fas fa-user-friends fa-lg"
                 ></i>
                 <div id="myDropdown" className="dropdown-content"></div>
@@ -117,7 +128,10 @@ class Navbar extends Component {
                 <i className="fas fa-user-friends fa-lg"></i>
               </Link>{" "}
             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
             <div className="right-navbar-icon">
               {" "}
               <div class="dropdown">
