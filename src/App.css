@@ -73,13 +73,6 @@ header {
 .searchl {
   display: flex;
   width: 30vw;
-<<<<<<< HEAD
-}
-
-.srch-icon {
-  margin-left: 19.5vw;
-=======
->>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
 }
 .navleft {
   display: flex;
@@ -515,6 +508,9 @@ img {
 
 .cancel-request {
   margin-left: 10px;
+  background-color: #f5f6f7 !important;
+  border-color: #ccd0d5 !important;
+  color: #4b4f56 !important;
 }
 
 .createfooter {
@@ -665,6 +661,7 @@ img {
 
 .ageOfPost{
   font-size: 10px;
+<<<<<<< HEAD
 =======
 
 
@@ -708,5 +705,11 @@ ul {
 
 .li {
   margin-right: 100px;
->>>>>>> 529254bda9e6f2872c8e482bb2016521db5e18ab
+}
+
+.delete-request{
+  margin-left: 10px;
+  background-color: #f5f6f7 !important;
+  border-color: #ccd0d5 !important;
+  color: #4b4f56 !important;
 }
