@@ -13,6 +13,7 @@ import PrivateRoute from "./utils/auth";
 import Allusers from "./components/Allusers"
 import Navbar from "./components/Navbar"
 import Notifications from "./components/Notifications";
+import TargetUser from "./components/TargetUser";
 
 const logoutUser = () => {
   localStorage.removeItem("FBIdToken");
@@ -69,6 +70,12 @@ const App = () => {
         />
         <PrivateRoute
           exact
+          path="/user/:handle"
+          component = {Navbar}
+          authenticated={authenticated}
+        />  
+        <PrivateRoute
+          exact
           path="/user"
           component={userhome}
           authenticated={authenticated}
@@ -97,6 +104,12 @@ const App = () => {
           component={Notifications}
           authenticated={authenticated}
         />
+        <PrivateRoute
+          exact
+          path="/user/:handle"
+          component = {TargetUser}
+          authenticated={authenticated}
+        />        
       </div>
     </Router>
   );

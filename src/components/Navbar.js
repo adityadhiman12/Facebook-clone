@@ -22,6 +22,8 @@ class Navbar extends Component {
           this.setState({ user: res.data[0] });
           console.log(this.state.user.handle);
           this.props.history.replace(`/user/${this.state.user.handle}`);
+          window.location.reload();
+
         })
         .catch(err => {
           console.log(err);
@@ -65,6 +67,7 @@ class Navbar extends Component {
               <i
                 className="fas fa-search srch-icon"
                 onClick={this.handleClick}
+                href=""
               ></i>
               {/* </button> */}
             </div>
@@ -119,17 +122,14 @@ class Navbar extends Component {
               {" "}
               <div class="dropdown">
                 <button
-                  class="btn btn-primary dropdown-toggle drop-down-logout"
+                  className="btn btn-primary dropdown-toggle drop-down-logout"
                   type="button"
                   id="dropdownMenuButton"
                   data-toggle="dropdown"
                 >
-                  <i className="fas fa-caret-down fa-lg"></i>
                 </button>
                 <div className="dropdown-menu">
-                  {/* <a className="dropdown-item" > */}
                   <button onClick={this.logoutUser}>Sign out</button>
-                  {/* </a> */}
                 </div>
               </div>
             </div>

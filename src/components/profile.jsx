@@ -39,6 +39,35 @@ class profile extends Component {
       })
       .catch(err => console.log(err));
   }
+
+  handleChangeImage = event => {
+    // console.log(event.target.files[0]);
+    let fd = new FormData();
+    fd.append("image", event.target.files[0], event.target.files[0].name);
+    axios
+      .post("/user/image/profile", fd, {
+        headers: { Authorization: `${localStorage.FBIdToken}` }
+      })
+      .then(res => {
+        window.location.reload();
+        console.log(res)
+      })
+        .catch(err => console.log(err));
+  };
+  handleChangeCover = event => {
+    let fd = new FormData();
+    fd.append("image", event.target.files[0], event.target.files[0].name);
+    axios
+      .post("/user/image/cover", fd, {
+        headers: { Authorization: `${localStorage.FBIdToken}` }
+      })
+      .then(res => {
+        window.location.reload();
+        console.log(res)
+      })
+        .catch(err => console.log(err));
+  }
+
   handleClick = event => {
     if (this.state.text.length !== 0) {
       this.setState({ click: "yes" });
@@ -66,6 +95,7 @@ class profile extends Component {
     ) : (
       <p>loading....</p>
     );
+    console.log(recentPostsdata);
     return (
       <div>
         {/* <Navbar /> */}
@@ -84,8 +114,7 @@ class profile extends Component {
             </button>
             <input
               type="file"
-              defaultValue={this.state.user.cover}
-              onChange=""
+              onChange={this.handleChangeCover}
               name="cover-pic"
             />
           </div>
@@ -103,8 +132,7 @@ class profile extends Component {
             </button>
             <input
               type="file"
-              defaultValue={this.state.user.imageUrl}
-              onChange=""
+              onChange={this.handleChangeImage}
               name="profile-pic"
             />
           </div>

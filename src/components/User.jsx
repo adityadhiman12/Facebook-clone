@@ -28,11 +28,14 @@ export class User extends Component {
         headers: { Authorization: `${localStorage.FBIdToken}` }
       })
       .then(res => {
-        this.setState({
-          postings: res.data
-        });
+        console.log(res.data)
+          this.setState({
+            postings: res.data
+          });         
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+      console.log(err)
+      });
     axios
       .get("/user", { headers: { Authorization: `${localStorage.FBIdToken}` } })
       .then(res => {

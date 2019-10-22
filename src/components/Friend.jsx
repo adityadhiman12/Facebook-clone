@@ -29,7 +29,7 @@ class Friend extends Component {
         <div className="grid5">
           <div>
             <a
-              class=" _8t lfloat _ohe"
+              className=" _8t lfloat _ohe"
               href=""
               data-hovercard-prefer-more-content-show="1"
             >

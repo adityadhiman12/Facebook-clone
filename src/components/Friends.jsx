@@ -4,6 +4,9 @@ require("../App.css");
 
 class Friends extends Component {
   state = {};
+  componentDidMount(){
+    console.log(this.props.friends)
+  }
   render() {
     return (
       <div className="coverpadx10">

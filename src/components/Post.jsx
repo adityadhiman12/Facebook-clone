@@ -45,8 +45,10 @@ class Post extends Component {
                   to={`/profile`}
                   className="round-img"
                 />
-                <div className="fetched-post-content">
-                  {userHandle}
+                <div
+                  className="fetched-post-content">
+                    {userHandle}
+                  
                   <div className="ageOfPost">{dayjs(createdAt).fromNow()}</div>
                 </div>
               </div>
@@ -57,10 +59,7 @@ class Post extends Component {
                   {/* <div className="like-comment-button"> */}
                   <div className="footer">
                     <i class="far fa-thumbs-up"></i>
-                    <button  className="likebtn1">
-                      {" "}
-                      Like
-                    </button>
+                    <button className="likebtn1"> Like</button>
                     {/* <> insert total number of likes on post</> */}
                   </div>
                   <div className="footer">
@@ -74,12 +73,11 @@ class Post extends Component {
                 <textarea
                   className="comments"
                   name="comments"
-                  value=""
                   placeholder="Write a comment..."
                   rows="1"
                   cols="50"
                 />
-                <button className="btn btn-primary btn-xs _btnsize" >
+                <button className="btn btn-primary btn-xs _btnsize">
                   Post
                 </button>
               </div>
