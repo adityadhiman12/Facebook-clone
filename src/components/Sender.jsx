@@ -71,8 +71,8 @@ class Sender extends Component {
                   )}
                 </small>
               </p>
-              <button onClick={this.acceptFriendRequest}>Accept</button>
-              <button onClick={this.rejectFriendRequest}>Reject</button>
+              <button type="button" class="btn btn-primary btn-sm" onClick={this.acceptFriendRequest}>Accept</button>
+              <button  type="button" class="btn btn-primary btn-sm delete-request" onClick={this.rejectFriendRequest}>Delete Request</button>
             </div>
           </div>
         </div>

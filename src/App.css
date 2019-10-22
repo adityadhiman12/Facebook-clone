@@ -498,6 +498,9 @@ img {
 
 .cancel-request {
   margin-left: 10px;
+  background-color: #f5f6f7 !important;
+  border-color: #ccd0d5 !important;
+  color: #4b4f56 !important;
 }
 
 .createfooter {
@@ -648,4 +651,11 @@ img {
 
 .ageOfPost{
   font-size: 10px;
+}
+
+.delete-request{
+  margin-left: 10px;
+  background-color: #f5f6f7 !important;
+  border-color: #ccd0d5 !important;
+  color: #4b4f56 !important;
 }

@@ -56,7 +56,7 @@ class Adduser extends Component {
                 </small>
               </p>
               <button type="button" class="btn btn-primary btn-sm" onClick={this.sendFriendRequest}> Add friend</button>
-              <button type="button" class="btn btn-primary btn-sm cancel-request" onClick={this.cancelFriendRequest}>Cancel</button>
+              <button type="button" class="btn btn-primary btn-sm cancel-request" onClick={this.cancelFriendRequest}>Remove</button>
             </div>
           </div>
         </div>
