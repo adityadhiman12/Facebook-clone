@@ -86,10 +86,11 @@ ul {
 }
 
 .postButton {
-  width: 40vw;
+  width: 100%;
 }
 
 
 .card-footer{
   background-color: transparent !important;
 }
+

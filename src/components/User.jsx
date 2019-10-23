@@ -5,11 +5,14 @@ import ShowPost from "./ShowPost";
 import axios from "axios";
 import Post from "./Post";
 import { withStyles } from "@material-ui/styles";
+import { Grid } from "@material-ui/core";
 
 const styles = {
   newsFeedPosts: {
     width: "60vw",
-    margin: "auto"
+    margin: "auto",
+    display: "grid",
+    gridGap: 30
   }
 };
 
@@ -28,7 +31,7 @@ export class User extends Component {
         headers: { Authorization: `${localStorage.FBIdToken}` }
       })
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
           this.setState({
             postings: res.data
           });         

@@ -25,6 +25,33 @@ const styles = {
 };
 
 class ShowPost extends Component {
+  state = {
+    commentText: "",
+    click: "no",
+    comments: []
+  };
+
+  commentPost = event => {
+    console.log(event)
+    if (this.state.commentText.length !== 0) {
+      this.setState({ click: "yes" });
+      this.state.comments.unshift({
+        text: this.state.text,
+        time: new Date().toISOString()
+      });
+    }
+    console.log(this.state.comments);
+    this.setState({ commentText: "" });
+    event.preventDefault();
+  }
+
+  handleChangeComment = event => {
+    console.log(event)
+    console.log(event.target.value);
+    this.setState({ commentText: event.target.value });
+  };
+
+
   render() {
     dayjs.extend(relativeTime);
     const {
@@ -37,7 +64,7 @@ class ShowPost extends Component {
         "/post",
         { body: post.text },
         { headers: { Authorization: `${localStorage.FBIdToken}` } }
-      );
+      )
     });
 
     return posts.map(post => (
@@ -48,7 +75,7 @@ class ShowPost extends Component {
             src={imageUrl}
             component={Link}
             to={`/profile`}
-            className="round-img"
+            alt="profile"
           />
           <div className="fetched-post-content">
             {handle}
@@ -63,13 +90,11 @@ class ShowPost extends Component {
               <i class="far fa-thumbs-up"></i>
               <button onClick="" className="likebtn1">
                 {" "}
-                Like
+                Likes
               </button>
               {/* <> total number of likes on post</> */}
             </div>
-            <div className="footer">
-              <i class="far fa-comment-alt"> Comment</i>
-            </div>
+            <div className="footer">Comments</div>
             {/* </div> */}
           </div>
         </div>
@@ -78,13 +103,13 @@ class ShowPost extends Component {
           <textarea
             className="comments"
             name="comments"
-            value=""
+            value={this.state.commentText}
             placeholder="Write a comment..."
             rows="1"
             cols="50"
-            onChange=""
+            onChange={this.handleChangeComment}
           />
-          <button className="btn btn-primary btn-xs _btnsize" onClick="">
+          <button className="btn btn-primary btn-xs _btnsize" onClick={this.commentPost}>
             Post
           </button>
         </div>

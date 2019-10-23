@@ -24,7 +24,6 @@ class login extends Component {
       .post("/login", userData)
       .then(res => {
         console.log(res.data.token);
-        // console.log(res.data);
         this.setState({
           loading: false
         });

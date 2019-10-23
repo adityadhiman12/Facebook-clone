@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../App.css"
 
 class Adduser extends Component {
   state = {
     sender: [],
-    receiver: []
+    receiver: [],
+    initial: "Add Friend",
+    cancel: "cancel",
+    disabled: false
   };
   componentDidMount() {
     // console.log(this.props.item.handle);
   }
 
   sendFriendRequest = () => {
+    this.setState({initial: "Added",  disabled: true})
     axios
       .post(`/user/${this.props.item.handle}/request`,{}, {
         headers: {
@@ -21,6 +26,7 @@ class Adduser extends Component {
       .catch(err => console.log(err));
   };
   cancelFriendRequest = () => {
+    this.setState({initial: "Add Friend",  disabled: false})
     axios
     .post(`/user/${this.props.item.handle}/cancelRequest`,{}, {
       headers: {
@@ -33,21 +39,21 @@ class Adduser extends Component {
 
   render() {
     return (
-      <div class="card mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-4">
+      <div className="card mb-3">
+        <div className="row no-gutters">
+          <div className="col-md-4">
             <img
               src={this.props.item.imageUrl}
-              class="card-img"
+              className="card-img addFriend-image"
               alt="ProfileImage"
             />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{this.props.item.handle}</h5>
-              <p class="card-text">Hey I am new at facebook</p>
-              <p class="card-text">
-                <small class="text-muted">
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">{this.props.item.handle}</h5>
+              <p className="card-text">Hey I am new at facebook</p>
+              <p className="card-text">
+                <small className="text-muted">
                   {this.props.item.friends ? (
                     <p>{this.props.item.friends.length}friends</p>
                   ) : (
@@ -55,8 +61,8 @@ class Adduser extends Component {
                   )}
                 </small>
               </p>
-              <button type="button" class="btn btn-primary btn-sm" onClick={this.sendFriendRequest}> Add friend</button>
-              <button type="button" class="btn btn-primary btn-sm cancel-request" onClick={this.cancelFriendRequest}>Cancel</button>
+              <button type="button" className="btn btn-primary btn-sm" onClick={this.sendFriendRequest} disabled={this.state.disabled}>{this.state.initial}</button>
+              <button type="button" className="btn btn-primary btn-sm cancel-request" onClick={this.cancelFriendRequest} disabled={!this.state.disabled}>{this.state.cancel}</button>
             </div>
           </div>
         </div>

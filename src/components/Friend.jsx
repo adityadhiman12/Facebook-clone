@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 require ('../App.css');
+
 
 class Friend extends Component {
   state = {
@@ -42,15 +44,18 @@ class Friend extends Component {
                 role="img"
               />
             </a>
-            <a href="">{this.state.user.handle}</a>
+            <Link to={`/user/${this.state.user.handle}`}>
+            {this.state.user.handle}
+            </Link>
+            
             <br />
-            <a href="">
-              {this.state.user.friends ? (
+            <p>
+            {this.state.user.friends ? (
                 <p>{this.state.user.friends.length}friends</p>
               ) : (
                 <p>0 friends</p>
               )}
-            </a>
+            </p>
 
           </div>
         </div>

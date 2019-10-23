@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Comment from "./Comment";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-require("../App.css");
+import "../App.css";
 
 const styles = {
   card: {
@@ -22,13 +23,36 @@ const styles = {
   }
 };
 
+
 class Post extends Component {
-  state = {};
+  state = {
+    commentText: "",
+    click: "no",
+    comments: []
+  };
+  handleChangeComment = event => {
+    // console.log(event.target.value);
+    this.setState({ commentText: event.target.value });
+  };
+
+  submitComment = e => {
+    if (this.state.commentText.length !== 0) {
+      this.setState({ click: "yes" });
+      this.state.comments.unshift({
+        text: this.state.commentText,
+        time: new Date().toISOString()
+      });
+    }
+    console.log(this.state.comments);
+    this.setState({ commentText: "" });
+    e.preventDefault();
+    
+  }
+
   render() {
     dayjs.extend(relativeTime);
     const {
-      classes,
-      post: { body, createdAt, userImage, userHandle }
+      post: { body, createdAt, userImage, userHandle, postId}
     } = this.props;
     return (
       // one way of showing post
@@ -40,15 +64,16 @@ class Post extends Component {
               <div className="card-header">
                 <img
                   className="round-img"
+                  alt="profile"
                   src={userImage}
                   component={Link}
                   to={`/profile`}
-                  className="round-img"
                 />
-                <div
-                  className="fetched-post-content">
+                <div className="fetched-post-content">
+                  <Link to={`/user/${userHandle}`} className="link-to-profile">
                     {userHandle}
-                  
+                  </Link>
+
                   <div className="ageOfPost">{dayjs(createdAt).fromNow()}</div>
                 </div>
               </div>
@@ -76,8 +101,12 @@ class Post extends Component {
                   placeholder="Write a comment..."
                   rows="1"
                   cols="50"
+                  onChange={this.handleChangeComment}
                 />
-                <button className="btn btn-primary btn-xs _btnsize">
+                <div className="commentsDisplay">{this.state.comments.map(comment => (
+                  <Comment comment={comment} userImage={userImage} userHandle={userHandle} postId={postId}/>
+                ))}</div>
+                <button className="btn btn-primary btn-xs _btnsize" onClick={this.submitComment}>
                   Post
                 </button>
               </div>

@@ -160,7 +160,11 @@ header {
 body {
   background: #e9ebee;
 }
-
+.container7 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
 .coverpadx {
   left: 425px;
   height: 360px;
@@ -169,6 +173,11 @@ body {
   position: absolute;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.newsFeedPosts {
+  display: grid;
+  grid-gap: 30px;
 }
 
 .coverpadx img {
@@ -192,11 +201,6 @@ body {
   width: 200px;
   position: absolute;
   text-align: center;
-}
-
-.container7 {
-  display: flex;
-  width: 100%;
 }
 
 .Introduction {
@@ -418,6 +422,8 @@ body {
   width: 851px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-gap: 20px;
 
   position: absolute;
 }
@@ -593,7 +599,7 @@ img {
   padding: 0 2px;
   position: relative;
   text-decoration: none;
-  transition: 400ms cubic-bezier(.08,.52,.52,1) transform;
+  transition: 400ms cubic-bezier(0.08, 0.52, 0.52, 1) transform;
   font-size: 15px;
 }
 
@@ -602,12 +608,12 @@ img {
   background-color: transparent;
   color: #606770;
   font-size: 15px;
-  border:none;
+  border: none;
 }
 
 .cmnts {
   margin-left: 10px;
-  margin-bottom: 10px;/* changed */
+  margin-bottom: 10px; /* changed */
   margin-right: 0px;
   margin-top: 20px;
 }
@@ -624,28 +630,32 @@ img {
   top: 10px;
   display: inline-block;
   border: 1px solid #ccd0d5;
-  width:350px;
-  height:40px;
-  padding-top: 7.5px;/* changed */
-  margin-left:5px;
+  width: 350px;
+  height: 40px;
+  padding-top: 7.5px; /* changed */
+  margin-left: 5px;
 }
 .comments:focus {
-  background:  transparent;
+  background: transparent;
 }
 
-.nav-user-image{
+.nav-user-image {
   height: 26px;
-  width:26px;
-  border-radius:50%; margin-bottom: 25px;
-  
+  width: 26px;
+  border-radius: 50%;
+  margin-bottom: 25px;
 }
 
-._btnsize{
-  height:35px;
+._btnsize {
+  height: 35px;
   margin-left: 8px;
   margin-bottom: 30px;
 }
 
-.ageOfPost{
+.ageOfPost {
   font-size: 10px;
+}
+
+.link-to-profile {
+  color: #385898;
 }

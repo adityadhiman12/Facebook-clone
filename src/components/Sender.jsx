@@ -3,7 +3,10 @@ import axios from "axios";
 
 class Sender extends Component {
   state = {
-    sender: {}
+    sender: {},
+    accept: "Accept",
+    ignore: "Ignore",
+    disable: false
   };
 
   componentDidMount() {
@@ -22,6 +25,7 @@ class Sender extends Component {
   }
 
   acceptFriendRequest = () => {
+    
     axios
       .post(`/user/${this.props.item}/accept`,{}, {
         headers: {
@@ -32,6 +36,7 @@ class Sender extends Component {
         console.log("accepted friend request");
       })
       .catch(err => console.log(err));
+      this.setState({accept: "Accepted", disable: true})
   };
 
   rejectFriendRequest = () => {
@@ -45,6 +50,7 @@ class Sender extends Component {
         console.log("rejected friend request");
       })
       .catch(err => console.log(err));
+      this.setState({ignore: "Ignored", disable: true})
   };
 
   render() {
@@ -71,8 +77,8 @@ class Sender extends Component {
                   )}
                 </small>
               </p>
-              <button onClick={this.acceptFriendRequest}>Accept</button>
-              <button onClick={this.rejectFriendRequest}>Reject</button>
+              <button type="button" className="btn btn-primary btn-sm" onClick={this.acceptFriendRequest} disabled={this.state.disable}>{this.state.accept}</button>
+              <button type="button" className="btn btn-primary btn-sm cancel-request" onClick={this.rejectFriendRequest} disabled={this.state.disable}>{this.state.ignore}</button>
             </div>
           </div>
         </div>

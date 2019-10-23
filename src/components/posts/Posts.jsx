@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import "./css/posts.css";
-import axios from "axios";
 
 export class Posts extends Component {
   state = {
@@ -10,6 +9,7 @@ export class Posts extends Component {
   };
 
 
+ 
   render() {
     return (
       <div>
@@ -24,8 +24,8 @@ export class Posts extends Component {
 
         <div className="card-footer">
           <ul>
-            <div className="fk">
-              <div className="space buttonwrapper3">
+            <div className="fk postInput">
+              {/* <div className="space buttonwrapper3"> */}
                 {/* <button className="add-img">
                   <i
                     className="fas fa-photo-video fa-lg"
@@ -33,7 +33,7 @@ export class Posts extends Component {
                   ></i>{" "}
                   Photo{" "}
                 </button> */}
-                <button
+                {/* <button
                   className="fas fa-photo-video fa-lg"
                   style={{ color: "blue" }}
                 >
@@ -41,10 +41,10 @@ export class Posts extends Component {
                     name="img"
                     type="file"
 
-                    onChange={this.handleChangeImage}
+                    onChange={this.props.handleChange}
                   />
-                </button>
-              </div>
+                </button> */}
+              {/* </div> */}
 
               <Button
                 variant="contained"
