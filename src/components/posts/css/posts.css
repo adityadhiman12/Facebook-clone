@@ -1,0 +1,96 @@
+ul {
+  list-style-type: none;
+}
+
+.fk {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: inherit;
+  font-weight: 650;
+  color: #4b4f56;
+  font-size: 14px;
+  padding-top: 0px;
+  padding-right: 22px;
+  padding-bottom: 0px;
+  padding-left: 35px;
+  overflow: hidden;
+}
+
+.space {
+  display: inline-block;
+  margin-right: 38px;
+  margin-left: -32px;
+  background: #f5f6f7;
+  width: 116px;
+  height: 29px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.add-img {
+  background-color: transparent;
+  border-color: transparent;
+  font-family: inherit;
+  font-weight: 650;
+  color: #4b4f56;
+  font-size: 14px;
+}
+
+.space1 {
+  display: inline-block;
+  margin-left: -32px;
+  background: #f5f6f7;
+  width: 132px;
+  height: 29px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.buttonwrapper3 {
+  width: 265px;
+  height: 35px;
+  text-align: center;
+}
+
+.buttonwrapper3 input[type="file"] {
+  width: 40px;
+  height: 25px;
+  opacity: 0;
+}
+
+.posts {
+  width: 60%;
+  margin: auto;
+  height: 100%;
+  margin-top: 2%;
+}
+
+.postClass {
+  width: 100%;
+  height: 120px;
+  padding: 5px;
+  border-radius: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postButton {
+  width: 100%;
+}
+
+
+.card-footer{
+  background-color: transparent !important;
+}
+

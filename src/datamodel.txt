@@ -1,0 +1,42 @@
+
+
+COLLECTIONS : 
+
+1. Users Collection
+
+      - User ID
+
+      - Email
+
+      - Name
+
+      - Password
+
+2. Post Collection 
+
+     - Post ID
+
+     - Text
+
+     - Created By
+
+          - User ID
+
+          - User Name
+
+     - Time Stamp
+
+     - Reply (true/false)
+
+     - Photo URL
+
+4. Friends Collection
+
+     - User ID
+
+     - User Name
+
+     - Friends User ID
+
+     - Friends User Name 
+
